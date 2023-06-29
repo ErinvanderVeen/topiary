@@ -1456,8 +1456,6 @@ dependencies = [
 [[package]]
 name = "tree-sitter"
 version = "0.20.10"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e747b1f9b7b931ed39a548c1fae149101497de3c1fc8d9e18c62c1a66c683d3d"
 dependencies = [
  "cc",
  "regex",
@@ -1475,7 +1473,6 @@ dependencies = [
 [[package]]
 name = "tree-sitter-facade"
 version = "0.9.3"
-source = "git+https://github.com/tweag/tree-sitter-facade#1b290e795e700a57d8bd303f98a9715ab1c4f598"
 dependencies = [
  "js-sys",
  "tree-sitter",

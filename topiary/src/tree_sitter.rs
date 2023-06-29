@@ -1,4 +1,4 @@
-use std::collections::HashSet;
+use std::{collections::HashSet, eprintln};
 
 use serde::Serialize;
 use tree_sitter_facade::{
@@ -49,6 +49,10 @@ impl TopiaryQuery {
     ) -> FormatterResult<TopiaryQuery> {
         let query = Query::new(grammar, query_content)
             .map_err(|e| FormatterError::Query("Error parsing query file".into(), Some(e)))?;
+
+        let serialized_query = query.serialize().unwrap();
+        eprintln!("ERIN: {:#?}", serialized_query);
+        let query = Query::deserialize(&serialized_query, grammar, query_content).unwrap();
 
         Ok(TopiaryQuery {
             query,
